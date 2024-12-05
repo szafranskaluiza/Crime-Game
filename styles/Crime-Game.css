@@ -1,7 +1,7 @@
 /* Plik style.css */
 
 body { 
-    background-image: url("forest-6524635_1920.jpg");
+    background-image: url("../resources/forest-6524635_1920.jpg");
     background-repeat: no-repeat;
     background-position: center;
     height: 100vh;
@@ -49,6 +49,7 @@ button {
     border: 3px solid darkolivegreen;
     padding: 10px;
     margin: 20px;
+    border-radius: 5px;
 }
 
 #start-btn {
@@ -75,4 +76,8 @@ h2 {
 p {
     padding: 20px;
     line-height: 1.5;
+}
+
+.hidden {
+    display: none;
 }
