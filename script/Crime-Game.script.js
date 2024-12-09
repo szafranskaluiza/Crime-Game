@@ -1,6 +1,10 @@
 const startPl = document.querySelector('#startPl');
 const startEng =document.querySelector('#startEng');
 
+const game = document.getElementById("game");
+const body = document.body; 
+console.log(game);
+console.log(body);
 
 // initialize buttons
 startPl.onclick = goStartPl;
@@ -12,6 +16,7 @@ function goStartPl() {
   document.getElementById("title").style.display = "none";
   document.getElementById("description").style.display = "none";
   document.getElementById("start-btn").style.display = "none";
+  
   
   let text1 = document.createElement("p");
   text1.textContent = "Noc nad Luthen była czarna jak atrament, przetykana jedynie słabym blaskiem gwiazd. Miasto, spowite mgłą, zdawało się wstrzymywać oddech. W tej ciszy, która bardziej przypominała groźbę niż ukojenie, w rezydencji Eliasza Althorna – wybitnego mistrza magii luster – wydarzyło się coś, co wstrząsnęło podstawami świata."
@@ -28,18 +33,18 @@ function goStartPl() {
   let text5 = document.createElement("p");
   text5.textContent = "Czas płynie. Śledztwo zaczyna się teraz."
 
-  document.body.appendChild(text1);
-  document.body.appendChild(text2);
-  document.body.appendChild(text3);
-  document.body.appendChild(text4);
-  document.body.appendChild(text5);
+  game.appendChild(text1);
+  game.appendChild(text2);
+  game.appendChild(text3);
+  game.appendChild(text4);
+  game.appendChild(text5);
 
   const keepGoingBtnPl = document.createElement("button");
   keepGoingBtnPl.textContent = "Kontynuuj";
   keepGoingBtnPl.style.cursor = "pointer";
   keepGoingBtnPl.style.color = "lightgray";
   
-  document.body.appendChild(keepGoingBtnPl);
+  game.appendChild(keepGoingBtnPl);
 
 
 };
@@ -66,11 +71,11 @@ function goStartEng() {
 
   const gameElement = document.querySelector("#game");
 
-  document.body.appendChild(text1);
-  document.body.appendChild(text2);
-  document.body.appendChild(text3);
-  document.body.appendChild(text4);
-  document.body.appendChild(text5);
+  game.appendChild(text1);
+  game.appendChild(text2);
+  game.appendChild(text3);
+  game.appendChild(text4);
+  game.appendChild(text5);
 
 
   const keepGoingBtnEng = document.createElement("button");
@@ -78,5 +83,5 @@ function goStartEng() {
   keepGoingBtnEng.style.cursor = "pointer";
   keepGoingBtnEng.style.color = "lightgray";
   
-  document.body.appendChild(keepGoingBtnEng);
+  game.appendChild(keepGoingBtnEng);
 };
