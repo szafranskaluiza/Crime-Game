@@ -10,8 +10,26 @@ console.log(body);
 startPl.onclick = goStartPl;
 startEng.onclick = goStartEng;
 
+// global varibles
+let myQuestion = document.createElement("p");
+myQuestion.textContent = "";
 
-//functions in Polish
+let mayorText = document.createElement("p");
+
+//functions in Polish [test1, test2 ,test 3]
+function appendToGame(...args) {
+  args.forEach(element => {
+    game.appendChild(element)
+  });
+}
+
+function addClassName(elements, name) {
+  elements.forEach(element => {
+    element.classList.add(name)
+  }
+
+  )
+}
 
 function goStartPl() {
   document.getElementById("title").style.display = "none";
@@ -20,31 +38,18 @@ function goStartPl() {
   
   
   let text1 = document.createElement("p");
-  text1.textContent = "Noc nad Luthen była czarna jak atrament, przetykana jedynie słabym blaskiem gwiazd. Miasto, spowite mgłą, zdawało się wstrzymywać oddech. W tej ciszy, która bardziej przypominała groźbę niż ukojenie, w rezydencji Eliasza Althorna – wybitnego mistrza magii luster – wydarzyło się coś, co wstrząsnęło podstawami świata."
-
+  text1.textContent = dialogs.goStartPl.text1;
   let text2 = document.createElement("p");
-  text2.textContent = "Strażnicy szybko zamknęli miejsce zbrodni, a wiadomość o śmierci Althorna rozeszła się po mieście jak pożar. Ktoś odważył się naruszyć równowagę między światem ludzi a lustrzanym wymiarem. Ktoś zabił jedynego człowieka, który mógł opanować tę moc."
-
+  text2.textContent = dialogs.goStartPl.text2;
   let text3 = document.createElement("p");
-  text3.textContent = "Portal pozostaje otwarty, jego światło coraz bardziej zniekształca rzeczywistość, a czas ucieka. Jeśli nie odkryjesz prawdy i nie znajdziesz sprawcy, miasto Luthen stanie się niczym więcej niż pyłem na wietrze – pochłoniętym przez bezdenne lustro."
-
+  text3.textContent = dialogs.goStartPl.text3;
   let text4 = document.createElement("p");
-  text4.textContent = "Teraz to Ty stoisz w centrum tej opowieści. Czy dasz radę rozwikłać tajemnicę? Czy odkryjesz, co wydarzyło się tej nocy? Każda decyzja będzie miała swoje konsekwencje. Każdy wybór zbliży Cię do prawdy... lub do zguby."
-
+  text4.textContent = dialogs.goStartPl.text4;
   let text5 = document.createElement("p");
-  text5.textContent = "Czas płynie. Śledztwo zaczyna się teraz."
+  text5.textContent = dialogs.goStartPl.text5;
 
-  text1.className = "startText";
-  text2.className = "startText";
-  text3.className = "startText";
-  text4.className = "startText";
-  text5.className = "startText";
-
-  game.appendChild(text1);
-  game.appendChild(text2);
-  game.appendChild(text3);
-  game.appendChild(text4);
-  game.appendChild(text5);
+  addClassName([text1, text2, text3, text4, text5], "startText");
+  appendToGame(text1, text2, text3, text4, text5);
 
   const keepGoingBtnPl = document.createElement("button");
   keepGoingBtnPl.textContent = "Kontynuuj";
@@ -72,31 +77,18 @@ function meetMayorPl() {
   document.getElementById("keep-going-btn-pl").style.display = "none";
   
   let text1 = document.createElement("p");
-  text1.textContent = "Brama rezydencji Eliasza Althorna była otwarta, choć otoczenie zdawało się temu zaprzeczać – mrok spowijał budynek, a mgła wiła się nisko, jakby niechętnie wpuszczała kogokolwiek w swoje objęcia. W powietrzu unosiła się dziwna, metaliczna woń ozonu, która wbijała się w nozdrza i pozostawiała nieprzyjemny posmak niepokoju. Przez otwarte drzwi wejściowe widać było słabe światło lamp, migoczące niczym świeca na wietrze";
-
+  text1.textContent = dialogs.meetMayorPl.text1;
   let text2 = document.createElement("p");
-  text2.textContent= "W środku panował chaos – podłoga warsztatu Althorna usiana była odłamkami luster, które połyskiwały jak tysiące maleńkich księżyców. Czarnomagiczne runy zdobiły ściany, pulsując niepokojącym, niestabilnym światłem. Mimo że ciało mistrza zostało już zabrane przez straż, w pomieszczeniu wciąż wyczuwało się aurę tragedii.";
-
+  text2.textContent= dialogs.meetMayorPl.text2;
   let text3 = document.createElement("p");
-  text3.textContent = "Przy oknie, z twarzą wyrytą mieszanką zmęczenia i napięcia, stał Burmistrz Luthen – niski, postawny mężczyzna o siwiejących skroniach i spojrzeniu, które wydawało się przebijać mgłę. Na widok Twojej postaci odwrócił się z ulgą, choć w jego oczach błysnęła iskra desperacji.";
-  
+  text3.textContent = dialogs.meetMayorPl.text3;
   let text4 = document.createElement("p");
-  text4.textContent = "'Nareszcie,' powiedział, jakby Twoje pojawienie się było jedynym, co mogło przywrócić mu spokój. 'Potrzebujemy Cię, i to natychmiast. Sytuacja jest… delikatnie mówiąc, poza naszym zasięgiem.'";
-
+  text4.textContent = dialogs.meetMayorPl.text4;
   let text5 = document.createElement("p");
-  text5.textContent = "Wskazał dłonią na roztrzaskane lustra i czarne runy. 'To nie jest zwykłe morderstwo. Wszyscy mówią o portalu, o magii… ale ja potrzebuję dowodów, faktów. I odpowiedzi, zanim miasto całkiem pogrąży się w chaosie.'";
+  text5.textContent = dialogs.meetMayorPl.text5;
 
-  text1.className = "mayorText";
-  text2.className = "mayorText";
-  text3.className = "mayorText";
-  text4.className = "mayorText";
-  text5.className = "mayorText";
-
-  game.appendChild(text1);
-  game.appendChild(text2);
-  game.appendChild(text3);
-  game.appendChild(text4);
-  game.appendChild(text5);
+  addClassName([text1, text2, text3, text4, text5], "mayorText");
+  appendToGame(text1, text2, text3, text4, text5);
 
   const startInterviewMayor = document.createElement("button");
   startInterviewMayor.textContent = "Przesłuchaj Burmistrza";
@@ -106,16 +98,21 @@ function meetMayorPl() {
   
   game.appendChild(startInterviewMayor);
   
-  startInterviewMayor.onclick = startInterviewMayor;
+  startInterviewMayor.onclick = goStartInterviewMayor;
 
 }
 
-function startInterviewMayor() {
-  document.getElementsByClassName("startText").style.display = "none";
+function goStartInterviewMayor() {
+  const meetMayorPlElements = document.getElementsByClassName("mayorText"); //???
+  for (let element of meetMayorPlElements) {
+  element.style.display = "none";
+  }
+
   document.getElementById("interview-mayor").style.display = "none";
 
-  let myQuestion = document.createElement("p");
-  myQuestion.textContent = "";
+
+  //let myQuestion = document.createElement("p");
+  //myQuestion.textContent = ""; - uwarunkowaliśmy globalnie
 
   game.appendChild(myQuestion);
 
@@ -181,16 +178,28 @@ function startInterviewMayor() {
   selectNextStep.style.padding = "10px";
 
   const mayorIMG = document.createElement("img");
-  mayorIMG.src = ".../resources/mayor.png";
+  mayorIMG.src = "./resources/Mayor.png";
   mayorIMG.alt = "Mayor Picture";
   mayorIMG.id = "mayor-picture";
 
-  game.appendChild(mayorIMG);
+  
 
-  let mayorText = document.createElement("p");
+  //let mayorText = document.createElement("p") - uwarunkowaliśmy globalnie
   mayorText.textContent = "'Cieszę się, że jesteś tutaj. To miasto potrzebuje odpowiedzi. Jeśli chcesz wiedzieć coś więcej o sytuacji, o Althornie, o tym, co się tu wydarzyło, pytaj o co chcesz. Czasu jest mało, ale zrobię, co w mojej mocy, by Ci pomóc.'"
 
+
+  game.appendChild(mayorQuestion1);
+  game.appendChild(mayorQuestion2);
+  game.appendChild(mayorQuestion3);
+  game.appendChild(mayorQuestion4);
+  game.appendChild(mayorQuestion5);
+  game.appendChild(selectNextStep);
+
+  game.appendChild(myQuestion);
+
+  game.appendChild(mayorIMG);
   game.appendChild(mayorText);
+  
 
   mayorQuestion1.onclick = mayorQuestion1Handler;
   mayorQuestion2.onclick = mayorQuestion2Handler;
@@ -202,46 +211,38 @@ function startInterviewMayor() {
 };
 
 function mayorQuestion1Handler() {
-
-  myQuestion.textContent = "Co się dzieje w mieście po śmierci Althorna?";
-
-  mayorText.textContent = "Po tym, jak zginął, atmosfera w Luthen stała się... napięta. Mieszkańcy są wstrząśnięci, ale plotki o lustrzanym wymiarze zaczynają się rozprzestrzeniać. Wiesz, że Strażniczka Luster była jednym z ostatnich, którzy odwiedzili Althorna? Nie wiem, co się wtedy stało, ale po jej wizycie atmosfera w mieście zmieniła się na gorsze. Ona i Althorn mieli jakąś niejasną relację. Może ona wie coś, czego my nie rozumiemy. Może nawet znała sekret, który doprowadził do jego śmierci…";
+  myQuestion.textContent = dialogs.mayorQuestion1Handler.myQuestion;
+  mayorText.textContent = dialogs.mayorQuestion1Handler.mayorText;
 };
 
 function mayorQuestion2Handler() {
-
-  myQuestion.textContent = "Co możesz powiedzieć o Althornie? Jakie miał relacje z mieszkańcami?";
-
-  mayorText.textContent = "Althorn był… trudną postacią. Niezbyt otwarty na innych, ale i nie wrogi. Miał swoich zwolenników, ale także osoby, które go nie lubiły. Strażniczka Luster była jedną z tych, które spędzały z nim czas, a ich współpraca nie była do końca jasna. Ona miała dostęp do jego badań i była z nim związana, choć nigdy nie mówiła głośno o ich relacji. Mówi się, że miała swoje powody, by chronić go przed innymi, ale teraz, po jego śmierci, znika z miasta. Nie wiem, czy była zaangażowana w jego zabójstwo, ale na pewno wie coś, czego nie mówi.";
+  myQuestion.textContent = dialogs.mayorQuestion2Handler.myQuestion;
+  mayorText.textContent = dialogs.mayorQuestion2Handler.mayorText;
 };
 
 function mayorQuestion3Handler() {
-
-  myQuestion.textContent = "Co się stało w warsztacie? Jak wyglądała scena zbrodni?";
-
-  mayorText.textContent = "Warsztat Althorna to coś, czego nie da się zapomnieć. Lustra porozbijane na kawałki, leżące na ziemi niczym… jakby to była jakaś magia, której nie potrafię pojąć. Widziałem runy na ścianach, które pulsowały dziwnym światłem. Coś potężnego musiało się tu wydarzyć. A Strażniczka… Ona była tu tuż przed tym, jak znaleziono ciało. Wiem, że Althorn miewał kontakt z nią w sprawach swoich badań, ale nie wiem, czy to ma jakiś związek z jego śmiercią. Może to ona zbliżyła się do niebezpiecznego zaklęcia…";
+  myQuestion.textContent = dialogs.mayorQuestion3Handler.myQuestion;
+  mayorText.textContent = dialogs.mayorQuestion3Handler.mayorText;
 };
 
 function mayorQuestion4Handler() {
-
-  myQuestion.textContent = "Kto mógłby mieć motyw, by zabić Althorna?";
-
-  mayorText.textContent = "Z jednej strony mamy Therona, jego dawnego ucznia, który opuścił go po kłótni. Z drugiej, tajemniczą Wiedźmę z Lasu, która podobno znała sekrety Althorna, których nikt inny nie wiedział. Ale nie możemy zapominać o Strażniczce Luster. Często współpracowała z Althornem i miała dostęp do jego badań, które były… kontrowersyjne. Mówią, że zniknęła zaraz po jego śmierci, ale czy to naprawdę była przypadkowość? Jeśli ktoś mógłby wiedzieć, co się wydarzyło, to ona. Choć nie wiem, czy jej motyw byłby wystarczający do zabicia Althorna.";
+  myQuestion.textContent = dialogs.mayorQuestion4Handler.myQuestion;
+  mayorText.textContent = dialogs.mayorQuestion4Handler.mayorText;
 };
 
 function mayorQuestion5Handler() {
-
-  myQuestion.textContent = "Co możesz powiedzieć o magii luster, o tych portalach?";
-
-  mayorText.textContent = "Althorn był jednym z nielicznych, którzy potrafili zgłębiać magię luster w taki sposób, by otwierać portale do innych wymiarów. Ale nikt nie rozumie, jak to działa. Strażniczka Luster miała podobną wiedzę, ale nigdy nie ujawniała pełnych sekretów. Podobno jej zadaniem było pilnowanie tego, by magia luster nie wydostała się poza kontrolę. Jeśli ktoś miałby zrozumieć tę moc, to właśnie ona. Mówią, że była w okolicach warsztatu, ale nic więcej nie wiadomo. Jeśli chcesz dowiedzieć się więcej, musisz ją znaleźć. Ale uwaga – ona nie toleruje wtrącania się w jej sprawy.";
+  myQuestion.textContent = dialogs.mayorQuestion5Handler.myQuestion;
+  mayorText.textContent = dialogs.mayorQuestion5Handler.mayorText;
 };
 
 function selectNextStepHandler() {
+  const goStartInterviewMayorElements = document.getElementsByClassName("mayor-question");
+  for (let element of goStartInterviewMayorElements) {
+  element.style.display = "none";
+  }
+  //document.getElementsById("mayor-picture").style.display = "none"; jeszcze nie znikam obrazka
 
-  document.getElementsByClassName("mayor-question").style.display = "none";
-  document.getElementsById("mayor-picture").style.display = "none";
-
-  mayorText.textContent = "Dziękuję, że pomagasz nam w tej sprawie. Luthen nie może dłużej żyć w strachu. Jeśli odkryjesz coś o Strażniczce Luster, lub wyjaśnisz, co się wydarzyło, wróć do mnie. Miasto liczy na ciebie. Pamiętaj tylko, detektywie, że nie wszystko jest tym, czym się wydaje.";
+  mayorText.textContent = dialogs.selectNextStepHandler.mayorText;
 
   let question = document.createElement("h1");
   question.textContent = "Jak przeprowadzisz śledztwo?";
@@ -288,7 +289,7 @@ function selectNextStepHandler() {
 };
 
 function interviewVitneses() {
-  const selectNextStepHandlerElements =  document.getElementsByClassName("next-step-question");
+  const selectNextStepHandlerElements =  document.getElementsByClassName("next-step-question", "mayorText");
   for (let element of selectNextStepHandlerElements) {
     element.style.display = "none";
   }
@@ -353,16 +354,16 @@ function interviewVitneses() {
 
 function crimeSceneAnalysis() {
 
-  const selectNextStepHandlerElements =  document.getElementsByClassName("next-step-question");
+  const selectNextStepHandlerElements =  document.getElementsByClassName("next-step-question", );
   for (let element of selectNextStepHandlerElements) {
     element.style.display = "none";
   }
 
   let crimeSceneInvestigationText1 = document.createElement("h1");
-  crimeSceneInvestigationText1.textContent = "Warsztat Eliasza Althorna wciąż odgrodzony jest przez straż miejską, a samo pomieszczenie zdaje się wręcz emanować niepokojącą aurą. Od czasu odkrycia zbrodni nikt poza tobą nie odważył się wejść do środka, choć strażnicy wynieśli ciało, by umożliwić badanie miejsca. Zniszczenia są widoczne na pierwszy rzut oka – kawałki luster pokrywają podłogę niczym rozsypane gwiazdy, a na ścianach wciąż połyskują tajemnicze runy.";
+  crimeSceneInvestigationText1.textContent = dialogs.crimeSceneAnalysis.crimeSceneInvestigationText1;
 
   let crimeSceneInvestigationText2 = document.createElement("h1");
-  crimeSceneInvestigationText2.textContent = "Każdy szczegół w tym miejscu może być kluczem do rozwiązania zagadki – ukryty ślad, niepasujący element, coś, co przeoczyli strażnicy. Wiesz, że musisz dokładnie zbadać każdy zakątek, bo odpowiedzi leżą tu, na wyciągnięcie ręki.";
+  crimeSceneInvestigationText2.textContent = dialogs.crimeSceneAnalysis.crimeSceneInvestigationText2;
 
   game.appendChild(crimeSceneInvestigationText1);
   game.appendChild(crimeSceneInvestigationText2);
