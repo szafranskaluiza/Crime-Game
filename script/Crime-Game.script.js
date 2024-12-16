@@ -13,8 +13,11 @@ startEng.onclick = goStartEng;
 // global varibles
 let myQuestion = document.createElement("p");
 myQuestion.textContent = "";
+mayorText.id = "myQuestion";
 
 let mayorText = document.createElement("p");
+mayorText.textContent = "";
+mayorText.id = "mayorText";
 
 //functions in Polish [test1, test2 ,test 3]
 function appendToGame(...args) {
@@ -103,7 +106,7 @@ function meetMayorPl() {
 }
 
 function goStartInterviewMayor() {
-  const meetMayorPlElements = document.getElementsByClassName("mayorText"); //???
+  const meetMayorPlElements = document.getElementsByClassName("mayorText");
   for (let element of meetMayorPlElements) {
   element.style.display = "none";
   }
@@ -114,7 +117,7 @@ function goStartInterviewMayor() {
   //let myQuestion = document.createElement("p");
   //myQuestion.textContent = ""; - uwarunkowaliśmy globalnie
 
-  game.appendChild(myQuestion);
+  
 
   const mayorQuestion1 = document.createElement("button");
   mayorQuestion1.textContent = "Zapytaj o wydarzenia w mieście";
@@ -182,25 +185,13 @@ function goStartInterviewMayor() {
   mayorIMG.alt = "Mayor Picture";
   mayorIMG.id = "mayor-picture";
 
-  
-
-  //let mayorText = document.createElement("p") - uwarunkowaliśmy globalnie
-  mayorText.textContent = "'Cieszę się, że jesteś tutaj. To miasto potrzebuje odpowiedzi. Jeśli chcesz wiedzieć coś więcej o sytuacji, o Althornie, o tym, co się tu wydarzyło, pytaj o co chcesz. Czasu jest mało, ale zrobię, co w mojej mocy, by Ci pomóc.'"
-
-
-  game.appendChild(mayorQuestion1);
-  game.appendChild(mayorQuestion2);
-  game.appendChild(mayorQuestion3);
-  game.appendChild(mayorQuestion4);
-  game.appendChild(mayorQuestion5);
-  game.appendChild(selectNextStep);
+  mayorText.textContent = dialogs.goStartInterviewMayor.mayorText;
+  appendToGame(mayorQuestion1, mayorQuestion2, mayorQuestion3, mayorQuestion4, mayorQuestion5, selectNextStep);
 
   game.appendChild(myQuestion);
-
   game.appendChild(mayorIMG);
   game.appendChild(mayorText);
   
-
   mayorQuestion1.onclick = mayorQuestion1Handler;
   mayorQuestion2.onclick = mayorQuestion2Handler;
   mayorQuestion3.onclick = mayorQuestion3Handler;
@@ -278,9 +269,7 @@ function selectNextStepHandler() {
   selectNextStep3.style.alignItems = "center";
   selectNextStep3.style.padding = "10px";
 
-  game.appendChild(selectNextStep1);
-  game.appendChild(selectNextStep2);
-  game.appendChild(selectNextStep3);
+  appendToGame(selectNextStep1, selectNextStep2, selectNextStep3);
 
   selectNextStep1.onclick = interviewVitneses;
   selectNextStep2.onclick = crimeSceneAnalysis;
@@ -294,8 +283,8 @@ function interviewVitneses() {
     element.style.display = "none";
   }
 
-  let interviewStartText = document.createElement("h1");
-  interviewStartText.textContent = "Świadkowie czekają w jednej z sal ratusza. Każdy z nich został wezwany tutaj, by złożyć swoje zeznania, a teraz masz możliwość przesłuchania ich osobiście. To od ciebie zależy, w jakiej kolejności porozmawiasz z każdą z tych osób i jakich szczegółów zdołasz się dowiedzieć.";
+  let interviewStartText = document.createElement("p");
+  interviewStartText.textContent = dialogs.interviewVitneses.interviewStartText;
 
   game.appendChild(interviewStartText);
 
@@ -354,15 +343,17 @@ function interviewVitneses() {
 
 function crimeSceneAnalysis() {
 
-  const selectNextStepHandlerElements =  document.getElementsByClassName("next-step-question", );
+  const selectNextStepHandlerElements =  document.getElementsByClassName("next-step-question");
   for (let element of selectNextStepHandlerElements) {
     element.style.display = "none";
   }
 
-  let crimeSceneInvestigationText1 = document.createElement("h1");
+  document.getElementById("mayorText").style.display = "none";
+
+  let crimeSceneInvestigationText1 = document.createElement("p");
   crimeSceneInvestigationText1.textContent = dialogs.crimeSceneAnalysis.crimeSceneInvestigationText1;
 
-  let crimeSceneInvestigationText2 = document.createElement("h1");
+  let crimeSceneInvestigationText2 = document.createElement("p");
   crimeSceneInvestigationText2.textContent = dialogs.crimeSceneAnalysis.crimeSceneInvestigationText2;
 
   game.appendChild(crimeSceneInvestigationText1);
@@ -428,12 +419,7 @@ function crimeSceneAnalysis() {
   finishCrimeSceneAnalysis.style.alignItems = "center";
   finishCrimeSceneAnalysis.style.padding = "10px";
 
-  game.appendChild(checkRunes);
-  game.appendChild(checkNotes);
-  game.appendChild(checkMirrorsElements);
-  game.appendChild(checkFightTraces);
-  game.appendChild(checkPortal);
-  game.appendChild(finishCrimeSceneAnalysis);
+  appendToGame(checkRunes, checkNotes, checkMirrorsElements, checkFightTraces, checkPortal, finishCrimeSceneAnalysis);
 
   checkRunes.onclick = goCheckRunes;
   checkNotes.onclick = goCheckNotes;
@@ -451,14 +437,13 @@ function ownInvestigationAtTown() {
     element.style.display = "none";
   }
 
-  let ownInvestigationText1 = document.createElement("h1");
-  ownInvestigationText1.textContent = "Zostawiasz miejsce zbrodni za sobą i kierujesz się w głąb miasta. Luthen, choć tonie w mgle, żyje własnym rytmem – mieszkańcy pospiesznie mijają się na ulicach, a w powietrzu czuć niepokój. To tutaj, pośród zaułków, tawern i cieni codziennego życia, mogą kryć się odpowiedzi.";
+  let ownInvestigationText1 = document.createElement("p");
+  ownInvestigationText1.textContent = dialogs.ownInvestigationAtTown.ownInvestigationText1;
 
-  let ownInvestigationText2 = document.createElement("h1");
-  ownInvestigationText2.textContent = "Twoje śledztwo musi być precyzyjne – nie wszyscy będą chętni do rozmowy, a niektóre miejsca mogą wymagać twojej przebiegłości lub reputacji. Wiesz, że Eliasz Althorn miał kontakty zarówno wśród elit, jak i w bardziej szemranych kręgach. Być może to właśnie oni mogą rzucić światło na sprawę – o ile zdołasz zdobyć ich zaufanie lub rozwiązać ich własne problemy.";
+  let ownInvestigationText2 = document.createElement("p");
+  ownInvestigationText2.textContent = dialogs.ownInvestigationAtTown.ownInvestigationText2;;
 
-  game.appendChild(ownInvestigationText1);
-  game.appendChild(ownInvestigationText2);
+  appendToGame(ownInvestigationText1, ownInvestigationText2);
 
   const market = document.createElement("button");
   market.textContent = "Odwiedź targowisko";
@@ -520,12 +505,7 @@ function ownInvestigationAtTown() {
   keeperQuarters.style.alignItems = "center";
   keeperQuarters.style.padding = "10px";
 
-  game.appendChild(market)
-  game.appendChild(inn)
-  game.appendChild(studentHouse)
-  game.appendChild(witchHouse)
-  game.appendChild(mayorOffice)
-  game.appendChild(keeperQuarters)
+  appendToGame(market, inn, studentHouse, witchHouse, mayorOffice, keeperQuarters);
 
   market.onclick = goMarket;
   inn.onclick = goInn;
@@ -622,27 +602,19 @@ function goStartEng() {
   document.getElementById("start-btn").style.display = "none";
 
   let text1 = document.createElement("p");
-  text1.textContent = "The night over Luthen was as black as ink, pierced only by the faint glimmer of stars. The city, shrouded in mist, seemed to hold its breath. In this silence—more a threat than a comfort—something happened in the residence of Elias Althorn, the renowned master of mirror magic, that shook the very foundations of the world."
-
+  text1.textContent = dialogs.goStartEng.text1;
   let text2 = document.createElement("p");
-  text2.textContent = "The guards swiftly sealed the crime scene, but news of Althorn's death spread through the city like wildfire. Someone had dared to disturb the fragile balance between the world of humans and the mirror dimension. Someone had killed the only man who could control that power."
-
+  text2.textContent = dialogs.goStartEng.text2;
   let text3 = document.createElement("p");
-  text3.textContent = "The portal remains open, its light twisting reality more and more, and time is running out. If you don’t uncover the truth and find the culprit, the city of Luthen will be reduced to nothing more than dust in the wind—devoured by the bottomless mirror."
-
+  text3.textContent = dialogs.goStartEng.text3;
   let text4 = document.createElement("p");
-  text4.textContent = "Now, you stand at the heart of this story. Can you unravel the mystery? Will you discover what happened that night? Every decision you make will have consequences. Every choice will bring you closer to the truth... or to ruin."
-
+  text4.textContent = dialogs.goStartEng.text4;
   let text5 = document.createElement("p");
-  text5.textContent = "Time is slipping away. The investigation begins now."
+  text5.textContent = dialogs.goStartEng.text5;
 
   const gameElement = document.querySelector("#game");
 
-  game.appendChild(text1);
-  game.appendChild(text2);
-  game.appendChild(text3);
-  game.appendChild(text4);
-  game.appendChild(text5);
+  appendToGame(text1, text2, text3, text4, text5);
 
 
   const keepGoingBtnEng = document.createElement("button");

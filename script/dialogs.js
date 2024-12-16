@@ -61,6 +61,38 @@ const dialogs = {
 
     selectNextStepHandler: {
         mayorText: "Dziękuję, że pomagasz nam w tej sprawie. Luthen nie może dłużej żyć w strachu. Jeśli odkryjesz coś o Strażniczce Luster, lub wyjaśnisz, co się wydarzyło, wróć do mnie. Miasto liczy na ciebie. Pamiętaj tylko, detektywie, że nie wszystko jest tym, czym się wydaje."
+    },
+
+    goStartInterviewMayor: {
+        mayorText: "'Cieszę się, że jesteś tutaj. To miasto potrzebuje odpowiedzi. Jeśli chcesz wiedzieć coś więcej o sytuacji, o Althornie, o tym, co się tu wydarzyło, pytaj o co chcesz. Czasu jest mało, ale zrobię, co w mojej mocy, by Ci pomóc.'"
+    },
+
+    interviewVitneses: {
+        interviewStartText: "Świadkowie czekają w jednej z sal ratusza. Każdy z nich został wezwany tutaj, by złożyć swoje zeznania, a teraz masz możliwość przesłuchania ich osobiście. To od ciebie zależy, w jakiej kolejności porozmawiasz z każdą z tych osób i jakich szczegółów zdołasz się dowiedzieć."
+    },
+
+    ownInvestigationAtTown: {
+        ownInvestigationText1: "Zostawiasz miejsce zbrodni za sobą i kierujesz się w głąb miasta. Luthen, choć tonie w mgle, żyje własnym rytmem – mieszkańcy pospiesznie mijają się na ulicach, a w powietrzu czuć niepokój. To tutaj, pośród zaułków, tawern i cieni codziennego życia, mogą kryć się odpowiedzi.",
+
+        ownInvestigationText2: "Twoje śledztwo musi być precyzyjne, nie wszyscy będą chętni do rozmowy, a niektóre miejsca mogą wymagać twojej przebiegłości lub reputacji. Wiesz, że Eliasz Althorn miał kontakty zarówno wśród elit, jak i w bardziej szemranych kręgach. Być może to właśnie oni mogą rzucić światło na sprawę, o ile zdołasz zdobyć ich zaufanie lub rozwiązać ich własne problemy."
     }
+
+}
+
+
+const dialogsEng = {
+    goStartEng: {
+        text1: "The night over Luthen was as black as ink, pierced only by the faint glimmer of stars. The city, shrouded in mist, seemed to hold its breath. In this silence—more a threat than a comfort—something happened in the residence of Elias Althorn, the renowned master of mirror magic, that shook the very foundations of the world.",
+ 
+        text2: "The guards swiftly sealed the crime scene, but news of Althorn's death spread through the city like wildfire. Someone had dared to disturb the fragile balance between the world of humans and the mirror dimension. Someone had killed the only man who could control that power.",
+ 
+        text3: "The portal remains open, its light twisting reality more and more, and time is running out. If you don’t uncover the truth and find the culprit, the city of Luthen will be reduced to nothing more than dust in the wind—devoured by the bottomless mirror.",
+ 
+        text4: "Now, you stand at the heart of this story. Can you unravel the mystery? Will you discover what happened that night? Every decision you make will have consequences. Every choice will bring you closer to the truth... or to ruin.",
+ 
+        text5: "Time is slipping away. The investigation begins now."
+     },
+
+
 
 }
